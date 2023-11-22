@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Them san pham moi</h1>
+        <form action="/add_page" method="POST" style="display: flex; flex-direction: column;">
+            <label for="type">Type</label>
+            <input type="text" name="type" class="form-control">
+            <label for="name">Name</label>
+            <input type="text" name="name" class="form-control" required>
+            <label for="img">Image</label>
+            <input type="text" name="img" class="form-control" required>
+            <label for="price">Price</label>
+            <input type="text" name="price" class="form-control" required>
+            <input type="submit" value="Add new" class=""><br>
+            <a href="/add">Return</a>
+        </form>
+    </div>
+</body>
+</html>

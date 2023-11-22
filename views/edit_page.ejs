@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Chinh sua thon tin san pham</h1>
+        <form action="/edit_page" method="POST" style="display: flex; flex-direction: column;">
+            <input type="hidden" name="id" class="form-control" value="<%=data.id%>">
+            <label for="type">Type</label>
+            <input type="text" name="type" class="form-control" value="<%=data.type%>">
+            <label for="name">Name</label>
+            <input type="text" name="name" class="form-control" value="<%=data.name%>">
+            <label for="img">Image</label>
+            <input type="text" name="img" class="form-control" value="<%=data.img%>">
+            <label for="price">Price</label>
+            <input type="text" name="price" class="form-control" value="<%=data.price%>">
+            <input type="submit" value="Edit" class=""><br>
+            <a href="/add">Return</a>
+        </form>
+    </div>
+</body>
+</html>

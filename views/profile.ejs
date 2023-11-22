@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PucciMart - All Pet | Cửa hàng bách hoá thú cưng</title>
+
+    <!-- shortcut -->
+    <link rel="shortcut icon" href="./image/Vector.png" type="image/x-icon">
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- start header -->
+    <header>
+        <h4 class="header_box">PUCCI MART WILL PAY YOUR SHIPPING COSTS FOR ORDERS OF $50 OR MORE</h4>
+        <div class="header_below">
+            <a href="./">
+                <img src="./image/Vector.png">
+                <h3>PucciMart</h3>
+            </a>
+    
+            <ul class="sidebar">
+                <li class="sidebar_item">
+                    <a href="./">Home</a>
+                </li>
+                <li class="sidebar_item">
+                    <a href="./all_pet">All Pet</a>
+                </li>
+                <li class="sidebar_item  sidebar_item__btn">
+                    <a href="./page_cart">Cart</a>
+                </li>
+                <li class="sidebar_item">
+                    <a href="#">Contact Us</a>
+                </li>
+            </ul>
+    
+            <div class="ation_nav">
+                <div class="ation_nav__item">
+                    <i class="bi bi-search  search_icon"></i>
+                    <div class="search_nav">
+                        <div class="search">
+                            <input type="search" name="search" placeholder="Tìm kiếm sản phẩm...">
+                            <button type="submit"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ation_nav__item">
+                    <i class="bi bi-person-circle  account_icon"></i>
+                    <ul class="account">
+                        <li class="account_item">
+                            <a href="#"><i class="bi bi-person-lines-fill"></i>Profile</a>
+                        </li>
+                        <li class="account_item">
+                            <a href="./page_cart"><i class="bi bi-cart3"></i>Giỏ hàng</a>
+                        </li>
+                        <li class="account_item">
+                            <div class="toggle_dark">
+                                <button class="toggle_btn"></b>
+                            </div>
+                        </li>
+                        <li class="account_item">
+                            <a href="#"><i class="bi bi-power"></i>Đăng xuất</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ation_nav__item  menu_icon"><i class="bi bi-justify"></i></div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- start container -->
+    <div class="container">
+
+        <div class="profile">
+          <div class="profile_avata">
+            <img src="https://via.placeholder.com/300" alt="Profile picture" />
+            <h1>Nguyen Van A</h1>
+            <button class="edit_img">
+              <i class="bi bi-camera" style="cursor: pointer;"></i>
+              <input type="file" name=""/>
+            </button>
+          </div>
+  
+          <div class="profile_content">
+            <div class="editable">
+              <div>Tuổi:</div>
+              <input type="date" value="20"/>
+            </div>
+            <div class="editable">
+              <div>Số điện thoại:</div>
+              <div>12345</div>
+              <!-- <input type="text" value="1234122223" /> -->
+            </div>
+            <div class="editable">
+              <div>Email:</div>
+              <input type="text" value="abc@gmail." />
+            </div>
+            <div class="editable">
+              <div>Địa chỉ:</div>
+              <input type="text" value="123 Main Street, Quận 1, TP.HCM" />
+            </div>
+          </div>
+          <button class="btn_edit">
+            <i class="bi bi-pencil-square"></i>
+            Sửa
+        </button>
+        </div>
+      </div>
+
+
+    <!-- start footer -->
+    <footer>
+        <div class="foo_top">
+            <div data-aos="fade-right" class="foo_top__box">
+                <img src="./image/foo_top_1.png"><p>Free Same-Day Delivery</p>
+            </div>
+            <div data-aos="fade-up" class="foo_top__box">
+                <img src="./image/foo_top_2.png"><p>100% Secure Checkout</p>
+            </div>
+            <div data-aos="fade-left" class="foo_top__box">
+                <img src="./image/foo_top_3.png"><p>Easy 7 days replacement</p>
+            </div>
+        </div>
+
+        <ul class="foo_between">
+            <li data-aos="fade-up" class="foo_between__item">
+                <h3>about</h3>
+                <p><a href="#">Contact Us</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="#">Terms and Condition</a></p>
+            </li>
+            <li data-aos="fade-up" class="foo_between__item">
+                <h3>support</h3>
+                <p><a href="#">Shipping Info</a></p>
+                <p><a href="#">Track Order</a></p>
+                <p><a href="#">Help/FAQ</a></p>
+            </li>
+            <li data-aos="fade-up" class="foo_between__item">
+                <h3>contact us</h3>
+                <p>Call Us: +0123 456 789</p>
+                <p>Email Us: PucciMart@gmail.com</p>
+                <div><img src="./image/Google_Play.png"><img src="./image/Play_Store.png"></div>
+            </li>
+        </ul>
+
+        <div class="foo_below">
+            <p>All rights reserved@Puccimart</p>
+            <p>Terms and Condition</p>
+        </div>
+    </footer>
+
+    <!-- draggable -->
+    <nav>
+        <div class="nav-content">
+            <div class="toggle-btn">
+                <i class="bi bi-plus-lg"></i>
+            </div>
+            <span style="--i:1;"><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></span>
+            <span style="--i:2;"><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></span>
+            <span style="--i:3;"><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></span>
+            <span style="--i:4;"><a href="#"><ion-icon name="logo-tiktok"></ion-icon></a></span>
+            <span style="--i:5;"><a href="#"><ion-icon name="logo-pinterest"></ion-icon></a></span>
+        </div>
+    </nav>
+
+
+    <!-- to-top -->
+    <button id="backTop" class="backTop">
+        <ion-icon name="caret-up-outline"></ion-icon>
+    </button>
+
+
+    <!-- js -->
+    <script src="./js/script.js"></script>
+    <script src="./js/profile.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // animation
+        AOS.init();
+        AOS.init({
+            duration: 1000
+        });
+    </script>
+
+</body>
+</html>
+

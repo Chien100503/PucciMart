@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PucciMart - All Pet | Cửa hàng bách hoá thú cưng</title>
+
+    <!-- shortcut -->
+    <link rel="shortcut icon" href="./image/Vector.png" type="image/x-icon">
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/toast.css">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Toast Message---------------- -->
+    <!-- <div class="toast" id="success" role="alert">
+        <div class="toast-content">
+            <i class="bi bi-check2  toast-check"></i>
+            <div class="message">
+                <span class="message-text text-1">Success</span>
+                <span class="message-text text-2" id="success-text"></span>
+            </div>
+        </div>
+        <i class="bi bi-x-lg  close-success"></i>
+        <div class="progress"></div>
+    </div> -->
+    <div class="toast  toast-error" id="error" role="alert">
+        <div class="toast-content">
+            <i class="bi bi-exclamation-lg  toast-check  toast-check-error"></i>
+            <div class="message">
+                <span class="message-text text-1">Error</span>
+                <span class="message-text text-2" id="error-text"></span>
+            </div>
+        </div>
+        <i class="bi bi-x-lg  close-error"></i>
+        <div class="progress  progress-error"></div>
+    </div>
+
+    <!-- start container -->
+    <div class="container" style="padding-top: 0;">
+
+        <div class="banner_pageCart">
+            <img src="./image/banner_pageCart.png">
+            <div class="banner_pageCart__list">
+                <h2>PucciMart</h2>
+                <p><a href="/">Trang chủ</a> > Đăng nhập</p>
+            </div>
+        </div>
+
+        <form action="" onsubmit="return false; " class="register" id="form">
+            <div class="register__title">Đăng nhập</div>
+            <div>
+                <label>Email:</label>
+                <input id="email" name="email" type="email" placeholder="Nhập email của bạn" autocomplete="off" required>
+            </div>
+            <div>
+                <label>Mật khẩu:</label>
+                <input id="password" name="password" type="password" placeholder="Nhập mật khẩu của bạn" autocomplete="off" required>
+            </div>
+            <button type="submit" id="btn_login" class="registerBtn">Đăng nhập</button>
+            <p>Bạn chưa có tài khoản? <a href="./register">Đăng kí</a></p>
+        </form>
+
+    </div>
+
+
+    <!-- start footer -->
+    <footer>
+        <div class="foo_top">
+            <div data-aos="fade-right" class="foo_top__box">
+                <img src="./image/foo_top_1.png"><p>Free Same-Day Delivery</p>
+            </div>
+            <div data-aos="fade-up" class="foo_top__box">
+                <img src="./image/foo_top_2.png"><p>100% Secure Checkout</p>
+            </div>
+            <div data-aos="fade-left" class="foo_top__box">
+                <img src="./image/foo_top_3.png"><p>Easy 7 days replacement</p>
+            </div>
+        </div>
+
+        <ul class="foo_between">
+            <li data-aos="fade-up" class="foo_between__item">
+                <h3>about</h3>
+                <p><a href="#">Contact Us</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="#">Terms and Condition</a></p>
+            </li>
+            <li data-aos="fade-up" class="foo_between__item">
+                <h3>support</h3>
+                <p><a href="#">Shipping Info</a></p>
+                <p><a href="#">Track Order</a></p>
+                <p><a href="#">Help/FAQ</a></p>
+            </li>
+            <li data-aos="fade-up" class="foo_between__item">
+                <h3>contact us</h3>
+                <p>Call Us: +0123 456 789</p>
+                <p>Email Us: PucciMart@gmail.com</p>
+                <div><img src="./image/Google_Play.png"><img src="./image/Play_Store.png"></div>
+            </li>
+        </ul>
+
+        <div class="foo_below">
+            <p>All rights reserved@Puccimart</p>
+            <p>Terms and Condition</p>
+        </div>
+    </footer>
+
+    <!-- draggable -->
+    <!-- <nav>
+        <div class="nav-content">
+            <div class="toggle-btn">
+                <i class="bi bi-plus-lg"></i>
+            </div>
+            <span style="--i:1;"><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></span>
+            <span style="--i:2;"><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></span>
+            <span style="--i:3;"><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></span>
+            <span style="--i:4;"><a href="#"><ion-icon name="logo-tiktok"></ion-icon></a></span>
+            <span style="--i:5;"><a href="#"><ion-icon name="logo-pinterest"></ion-icon></a></span>
+        </div>
+    </nav> -->
+
+
+    <!-- to-top -->
+    <button id="backTop" class="backTop">
+        <ion-icon name="caret-up-outline"></ion-icon>
+    </button>
+
+
+    <!-- js -->
+    <script src="./js/login.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // animation
+        AOS.init();
+        AOS.init({
+            duration: 1000
+        });
+    </script>
+
+</body>
+</html>

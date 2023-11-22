@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile Model</title>
+    <style>
+      .profile-container {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .profile-container .profile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid #07a081;
+        background-color: #fff;
+        width: 600px;
+        height: 600px;
+        box-shadow: 0 0 60px rgba(7, 160, 129, 0.5);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .profile-container .profile:before {
+        content: "";
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 90%;
+        border: 2px solid #07a081;
+        z-index: -1;
+      }
+
+      .profile-container .profile img {
+        margin-top: -10%;
+        border: 10px solid #07a081;
+        border-radius: 50%;
+        width: 50%;
+        height: 50%;
+        object-fit: cover;
+        z-index: 1;
+        position: relative;
+      }
+
+      .profile-container .profile .user_name {
+        font-size: 30px;
+        margin: 0;
+        color: #07a081;
+        position: relative;
+        z-index: 2;
+      }
+
+      .profile-container .profile p {
+        font-size: 24px;
+        margin: 5px 0 0 0;
+        color: #07a081;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        margin-top: 12px;
+      }
+
+      .profile-container .profile .user_info {
+        width: 100%;
+      }
+
+      .profile-container .profile label {
+        background-color: black;
+        width: 15%;
+        font-weight: bold;
+        margin: 0;
+        color: #07a081;
+        position: relative;
+        z-index: 2;
+        margin-left: 70px;
+        display: flex;
+        font-size: 22px;
+      }
+
+      .profile-container .profile input {
+        border: none;
+        color: #07a081;
+        margin-left: 30px;
+        display: none;
+        font-size: 20px;
+      }
+
+      .profile-container .profile button {
+        background-color: #fff;
+        border: 2px solid #07a081;
+        color: #07a081;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 25px;
+        cursor: pointer;
+        display: none;
+        margin-left: 10px;
+      }
+
+      .profile-container .profile button.delete {
+        font-size: 16px;
+        padding: 5px 10px;
+        background-color: #07a081;
+        border: none;
+        color: white;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .profile-container .profile button:hover {
+        background-color: #07a081;
+        color: #fff;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      }
+
+      .profile-container .profile .editable  {
+        display: flex;
+      }
+
+      .profile-container .profile .editable input {
+        display: block;
+        margin-right: 10px;
+      }
+
+      .profile-container .profile .editable button {
+        display: block;
+      }
+
+      .trigger {
+        background-color: #fff;
+        border: 2px solid #07a081;
+        color: #07a081;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+
+      .trigger:hover {
+        background-color: #07a081;
+        color: #fff;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      }
+
+      /* Style mờ nền */
+      .backdrop {
+        z-index: 9998;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+      <div class="profile-container">
+        <div class="profile">
+          <img src="https://via.placeholder.com/300" alt="Profile picture" />
+          <div style="display: flex; margin-top: 10px;">
+            <div class="user_name" id="user_name"></div>
+            <button id="edit" onclick="convertDivsToInputs()" style="display: block;"><i class="fa-sharp fa-regular fa-pen-to-square"></i></button>
+            <button class="btn-save" style="display: none;"><i class="fa-regular fa-floppy-disk"></i></button>
+          </div>
+          <div class="user_info">
+            <p class="editable">
+              <label>Tuổi:</label>
+              <input class="infor" type="text" value="1234122223"/>
+            </p>
+            <p class="editable">
+              <label>SĐT:</label>
+              <input class="infor" type="text" value="1234122223" />
+              <!-- <button id="edit" onclick="convertDivToInput()"><i class="fa-sharp fa-regular fa-pen-to-square"></i></button>
+              <button class="btn-save" style="display: none;">Lưu</button> -->
+            </p>
+            <p class="editable">
+              <label>Email:</label>
+              <input class="infor" type="text" value="abc@gmail." />
+              <!-- <button id="edit" onclick="convertDivToInput()"><i class="fa-sharp fa-regular fa-pen-to-square"></i></button>
+              <button class="btn-save" style="display: none;">Lưu</button> -->
+            </p>
+            <p class="editable">
+              <label>Địa chỉ:</label>
+              <input class="infor" type="text" value="123 Main Street, Quận 1, TP.HCM" />
+              <!-- <button id="edit" onclick="convertDivToInput()"><i class="fa-sharp fa-regular fa-pen-to-square"></i></button>
+              <button class="btn-save" style="display: none;">Lưu</button> -->
+            </p>
+          </div>
+        </div>
+      </div>
+
+    <button class="trigger">Xem profile</button>
+
+    <script>
+      const triggerButton = document.querySelector(".trigger");
+      const profileContainer = document.querySelector(".profile-container");
+      const deleteButton = document.querySelector(".delete");
+      const backdrop = document.querySelector(".backdrop");
+      const edit = document.getElementById("edit")
+
+      edit.addEventListener('click', () =>{
+        const btn_save = document.querySelector(".btn-save")
+        btn_save.style.display = "block"
+        edit.style.display = "none"
+      });
+      
+      triggerButton.addEventListener("click", () => {
+        profileContainer.style.display = "flex";
+        backdrop.style.display = "block";
+      });
+      
+
+      const editableSections = [...document.querySelectorAll(".editable")];
+
+      editableSections.forEach((section) => {
+        const label = section.querySelector("label");
+        const input = section.querySelector("input");
+        const btnSave = section.querySelector(".btn-save");
+        const btnCancel = section.querySelector(".btn-cancel");
+
+        label.addEventListener("click", () => {
+          section.classList.add("editable");
+          input.focus();
+          label.style.display = "none";
+          input.style.display = "block";
+          btnSave.style.display = "block";
+          btnCancel.style.display = "block";
+        });
+
+        btnCancel.addEventListener("click", () => {
+          section.classList.remove("editable");
+          label.style.display = "flex";
+          input.style.display = "none";
+          input.value = label.nextSibling.innerText;
+          btnSave.style.display = "none";
+          btnCancel.style.display = "none";
+        });
+
+        btnSave.addEventListener("click", () => {
+          section.classList.remove("editable");
+          label.style.display = "flex";
+          label.nextSibling.innerText = input.value;
+          input.style.display = "none";
+          btnSave.style.display = "none";
+          btnCancel.style.display = "none";
+        });
+      });
+
+    </script>
+    
+    <script src="./js/login.js"></script>
+  </body>
+</html>

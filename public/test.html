@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chuyển đổi div thành input</title>
+</head>
+<body>
+  <div class="change_div">Nội dung div 1</div>
+  <div class="change_div">Nội dung div 2</div>
+  <button onclick="convertDivsToInputs()">Nhấn để chuyển đổi</button>
+  
+
+  <script>
+    function convertDivsToInputs() {
+      var divs = document.querySelectorAll(".change_div");
+      divs.forEach(function(div) {
+        var inputValue = div.innerHTML;
+        var input = document.createElement("input");
+        input.type = "text";
+        input.value = inputValue;
+        div.parentNode.replaceChild(input, div);
+      });
+    }
+  </script>
+</body>
+</html>

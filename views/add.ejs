@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="add_product">
+        <h1>Product Manager</h1>
+        <a href="/add_page">Them san pham</a>
+        <a href="/all_pet">Thoat chinh sua</a>
+        <table>
+            <thead>
+                <th>type</th>
+                <th>name</th>
+                <th>img</th>
+                <th>price</th>
+                <th>quan ly</th>
+            </thead>
+            <% for(var i = 0; i < data.length; i++) { %>
+                <tr>
+                <td><%= data[i].type %></td>
+                <td><%= data[i].name %></td>
+                <td><img src="<%= data[i].img %>" alt=""></td>
+                <td><%= data[i].price %>$</td>
+                <td>
+                    <a href="/edit_page/<%= data[i].id %>">Sua san pham</a>
+                    <a href="/delete/<%= data[i].id %>">Xoa san pham</a>
+                </td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+</body>
+</html>
+

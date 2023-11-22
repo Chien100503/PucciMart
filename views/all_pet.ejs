@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PucciMart - All Pet | Cửa hàng bách hoá thú cưng</title>
+
+    <!-- shortcut -->
+    <link rel="shortcut icon" href="./image/Vector.png" type="image/x-icon">
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- start header -->
+    <header>
+        <h4 class="header_box">PUCCI MART WILL PAY YOUR SHIPPING COSTS FOR ORDERS OF $50 OR MORE</h4>
+        <div class="header_below">
+            <a href="/">
+                <img src="./image/Vector.png">
+                <h3>PucciMart</h3>
+            </a>
+    
+            <ul class="sidebar">
+                <li class="sidebar_item">
+                    <a href="/">Home</a>
+                </li>
+                <li class="sidebar_item  sidebar_item__btn">
+                    <a href="./all_pet">All Pet</a>
+                </li>
+                <li class="sidebar_item">
+                    <a href="./page_cart">Cart</a>
+                </li>
+                <li class="sidebar_item">
+                    <a href="#">Contact Us</a>
+                </li>
+            </ul>
+    
+            <div class="ation_nav">
+                <div class="ation_nav__item">
+                    <i class="bi bi-search  search_icon"></i>
+                    <div class="search_nav">
+                        <div class="search">
+                            <input type="search" name="search" placeholder="Tìm kiếm sản phẩm...">
+                            <button type="submit"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <%if (status == "loggedIn"){%>
+                    <div class="ation_nav__item  cart_icons">
+                        <i class="bi bi-cart3"></i>
+                        <span class="cart_quantity  quantity">0</span>
+                    </div>
+                    <div class="ation_nav__item">
+                        <i class="bi bi-person-circle  account_icon"></i>
+                        <ul class="account">
+                            <li class="account_item">
+                                <a href="#"><i class="bi bi-person-lines-fill"></i>Profile</a>
+                            </li>
+                            <li class="account_item">
+                                <a href="./page_cart"><i class="bi bi-cart3"></i>Giỏ hàng</a>
+                            </li>
+                            <li class="account_item">
+                                <div class="toggle_dark">
+                                    <button class="toggle_btn"></b>
+                                </div>
+                            </li>
+                            <li class="account_item">
+                                <a href="/api/logout"><i class="bi bi-power"></i>Đăng xuất</a>
+                            </li>
+                        </ul>
+                    </div>
+                <%} else {%>
+                    <div class="login">
+                        <button><a href="./register">Đăng kí</a></button>
+                        <button><a href="./login">Đăng nhập</a></button>
+                    </div>                   
+                <%}%>
+                <div class="ation_nav__item  menu_icon"><i class="bi bi-justify"></i></div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- start container -->
+    <div class="container">
+
+        <!-- allBet_nav -->
+        <div class="allBet_nav">
+            <p class="allBet_nav__header"><a href="#">Trang chủ</a> > <a href="#">All Pet</a></p>
+
+            <div class="allBet_nav__content">
+                <div class="allBet_conHeader">
+                    <div class="allBet_conHeader__left">
+                        <select class="allBet_ct__list">
+                            <option value="0">Theo danh mục</option>
+                            <option value="1">Bird</option>
+                            <option value="2">Cat</option>
+                            <option value="3">Dog</option>
+                            <option value="4">Rabbit</option>
+                            <option value="5">Goldfish</option>
+                        </select>
+                        <select class="allBet_ct__list">
+                            <option value="0">Theo giá</option>
+                            <option value="1">Từ thấp đến cao</option>
+                            <option value="2">Từ cao đến thấp</option>
+                        </select>
+                    </div>
+                    <ul class="allBet_conHeader__right">
+                        <!--  -->
+                    </ul>
+                </div>
+
+                <div class="allBet_container">
+                    <% for(var i = 0; i < data.length; i++) { %>
+                        <li data-aos="zoom-in-up" class="product">
+                            <div class="product_img"><img class="product_img__image" src="<%= data[i].img %>"></div>
+                            <h3 class="product_name"><%= data[i].name %></h3>
+                            <p class="product_note">Loại: <%= data[i].type %></p>
+                            <p class="product_price"><span class="new_price">$<%= data[i].price %></span></p>
+                            <button class="add_cart">Thêm vào giỏ hàng</button>
+                        </li>
+                    <% } %>
+                    <!-- <li data-aos="zoom-in-up" class="product">
+                        <div class="product_img"><img class="product_img__image" src="./image/product_4.png"></div>
+                        <h3 class="product_name">Hạt Smartheart Puppy Vị Bò & Sữa Cho Chó Con</h3>
+                        <p class="product_note">Smartheart</p>
+                        <p class="product_price"><span class="new_price">$429</span></p>
+                        <div class="promotion"><span id="promotion">-35%</span></div>
+                        <button class="add_cart">Thêm vào giỏ hàng</button>
+                    </li> -->
+                </div>
+
+                <button type="submit" class="allBet_load"><a href="./add">Thêm sản phẩm</a></button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- start footer -->
+    <footer>
+        <div class="foo_top">
+            <div data-aos="fade-right" class="foo_top__box">
+                <img src="./image/foo_top_1.png"><p>Free Same-Day Delivery</p>
+            </div>
+            <div data-aos="fade-up" class="foo_top__box">
+                <img src="./image/foo_top_2.png"><p>100% Secure Checkout</p>
+            </div>
+            <div data-aos="fade-left" class="foo_top__box">
+                <img src="./image/foo_top_3.png"><p>Easy 7 days replacement</p>
+            </div>
+        </div>
+
+        <ul class="foo_between">
+            <li data-aos="fade-up" class="foo_between__item">
+                <h3>about</h3>
+                <p><a href="#">Contact Us</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="#">Terms and Condition</a></p>
+            </li>
+            <li data-aos="fade-up" class="foo_between__item">
+                <h3>support</h3>
+                <p><a href="#">Shipping Info</a></p>
+                <p><a href="#">Track Order</a></p>
+                <p><a href="#">Help/FAQ</a></p>
+            </li>
+            <li data-aos="fade-up" class="foo_between__item">
+                <h3>contact us</h3>
+                <p>Call Us: +0123 456 789</p>
+                <p>Email Us: PucciMart@gmail.com</p>
+                <div><img src="./image/Google_Play.png"><img src="./image/Play_Store.png"></div>
+            </li>
+        </ul>
+
+        <div class="foo_below">
+            <p>All rights reserved@Puccimart</p>
+            <p>Terms and Condition</p>
+        </div>
+    </footer>
+
+
+    <!-- modal_cart -->
+    <div class="modal_cart">
+        <div class="cart_nav">
+            <i class="bi bi-x-circle-fill  close_modalCart"></i>
+            <h2 class="cart_header">Giỏ hàng</h2>
+            <h4 class="cart_sl">Giỏ hàng của bạn: <span id="cart_sl">2</span> sản phẩm!</h4>
+
+            <div class="cart_body">
+                <div class="cart_body__header">
+                    <div class="cart_body__headerBox">Sản phẩm</div>
+                    <div class="cart_body__headerBox">Đơn giá</div>
+                    <div class="cart_body__headerBox">Số lượng</div>
+                </div>
+                <div class="cart_body__content">
+                    <!-- danh sách sản phẩm -->
+                </div>
+            </div>
+
+            <div class="cart_foo">
+                <p><span style="font-weight: 500;color: var(--clo_cl);">PucciMart:</span> Giao hàng trên toàn quốc</p>  
+                <div class="cart_foo__box">
+                    <h4>Tổng tiền: <span class="total_money"></span> </h4>
+                    <div>
+                        <a href="./page_cart" class="page_order">Đến trang giỏ hàng</a>
+                        <button type="submit" class="order_pro">Tiến hành đặt hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- draggable -->
+    <nav>
+        <div class="nav-content">
+            <div class="toggle-btn">
+                <i class="bi bi-plus-lg"></i>
+            </div>
+            <span style="--i:1;"><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></span>
+            <span style="--i:2;"><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></span>
+            <span style="--i:3;"><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></span>
+            <span style="--i:4;"><a href="#"><ion-icon name="logo-tiktok"></ion-icon></a></span>
+            <span style="--i:5;"><a href="#"><ion-icon name="logo-pinterest"></ion-icon></a></span>
+        </div>
+    </nav>
+
+
+    <!-- to-top -->
+    <button id="backTop" class="backTop">
+        <ion-icon name="caret-up-outline"></ion-icon>
+    </button>
+
+
+    <!-- js -->
+    <script src="./js/script.js"></script>
+    <script src="./js/app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // animation
+        AOS.init();
+        AOS.init({
+            duration: 1000
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+/* GG font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+.toast{
+  position: fixed;
+  top: 25px;
+  right: 30px;
+  border-radius: 6px;
+  background: #fff;
+  padding: 20px 35px 20px 25px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-left: 8px solid #40f467;
+  overflow: hidden;
+  transform: translateX(0);
+  transform: translateX(calc(100% + 50px));
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.25, 1.35);
+  z-index: 2000;
+}
+.toast-error {
+  border-left: 8px solid #DF2E38;
+}
+#error.active{
+  transform: translateX(0);
+}
+#success.actives {
+  transform: translateX(0);
+}
+.toast-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.toast-check{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 35px;
+  background-color: #40f467;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+}
+.toast-check-error {
+  background-color: #DF2E38;
+}
+.message{
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+.message-text{
+  font-size: 20px;
+  font-weight: 600;
+}
+.text-1{
+  color: #333;
+}
+.text-2{
+  color: #666;
+  font-weight: 400;
+  font-size: 16px;
+}
+.close-success,
+.close-error {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 5px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.close-success:hover,
+.close-error:hover {
+  opacity: 1;
+}
+.progress{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: #ddd;
+}
+.progress::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #40f467;
+}
+.progress-error::before {
+  background-color: #DF2E38;
+}
+.progress.actions::before{
+  animation: progress 5s linear forwards;
+}
+@keyframes progress {
+  100%{
+    right: 100%;
+  }
+}

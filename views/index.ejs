@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PucciMart | Cửa hàng bách hoá thú cưng</title>
+
+    <!-- shortcut -->
+    <link rel="shortcut icon" href="./image/Vector.png" type="image/x-icon">
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- start header -->
+    <header>
+        <h4 class="header_box">PUCCI MART WILL PAY YOUR SHIPPING COSTS FOR ORDERS OF $50 OR MORE</h4>
+        <div class="header_below">
+            <a href="/">
+                <img src="./image/Vector.png">
+                <h3>PucciMart</h3>
+            </a>
+
+            <ul class="sidebar">
+                <li class="sidebar_item  sidebar_item__btn">
+                    <a href="/">Home</a>
+                </li>
+                <li class="sidebar_item">
+                    <a href="./all_pet">All Pet</a>
+                </li>
+                <li class="sidebar_item">
+                    <a href="./page_cart">Cart</a>
+                </li>
+                <li class="sidebar_item">
+                    <a href="#">Contact Us</a>
+                </li>
+            </ul>
+
+            <div class="ation_nav">
+                <div class="ation_nav__item">
+                    <i class="bi bi-search  search_icon"></i>
+                    <div class="search_nav">
+                        <div class="search">
+                            <input type="search" name="search" placeholder="Tìm kiếm sản phẩm...">
+                            <button type="submit"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <%if (status=='loggedIn' ){%>
+                    <div class="ation_nav__item  cart_icons">
+                        <i class="bi bi-cart3"></i>
+                        <span class="cart_quantity  quantity">0</span>
+                    </div>
+                    <div class="ation_nav__item">
+                        <i class="bi bi-person-circle  account_icon"></i>
+                        <ul class="account">
+                            <li class="account_item">
+                                <a id="shown_profile" href="./profile"><i
+                                        class="bi bi-person-lines-fill"></i>Profile</a>
+                            </li>
+                            <li class="account_item">
+                                <a href="./page_cart"><i class="bi bi-cart3"></i>Giỏ hàng</a>
+                            </li>
+                            <li class="account_item">
+                                <div class="toggle_dark">
+                                    <button class="toggle_btn"></b>
+                                </div>
+                            </li>
+                            <li class="account_item">
+                                <a href="/api/logout"><i class="bi bi-power"></i>Đăng xuất</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <%} else {%>
+                        <div class="login">
+                            <button><a href="./register">Đăng kí</a></button>
+                            <button><a href="./login">Đăng nhập</a></button>
+                        </div>
+                        <%}%>
+                            <div class="ation_nav__item  menu_icon"><i class="bi bi-justify"></i></div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- start container -->
+    <div class="container">
+
+        <!-- navbar -->
+        <div class="navbar">
+            <div class="navbar_left">
+                <div class="navbar_box">
+                    <h1 class="navbar_box__h1">Love your plants<br>Take care of yourself</h1>
+                    <h4 class="navbar_box__h4">5% of every purchase helps rescues</h4>
+                    <button class="navbar_box__button">shop now</button>
+                    <ul class="navbar_box__icon">
+                        <li class="navbar_box__iconItem">
+                            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        </li>
+                        <li class="navbar_box__iconItem">
+                            <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+                        </li>
+                        <li class="navbar_box__iconItem">
+                            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        </li>
+                        <li class="navbar_box__iconItem">
+                            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="navbar_right">
+                <img src="./image/navbar_banner.png">
+            </div>
+            <div class="navbar_img">
+                <img src="./image/navbar_fix.png">
+                <img src="./image/navbar_fix.png">
+                <img src="./image/navbar_fix.png">
+            </div>
+        </div>
+        <!-- py_pet -->
+        <div class="py_pet">
+            <h2 data-aos="fade-up" class="text_header">Shop By Pet</h2>
+            <p data-aos="fade-up" class="text_subtitle">Shop the latest high-end designer products for your pups at our
+                luxury dog boutique!</p>
+            <ul class="py_pet__list">
+                <li data-aos="fade-up" class="py_pet__item"><a href="#"><img src="./image/bird.png">
+                        <p>Bird</p>
+                    </a></li>
+                <li data-aos="fade-up" class="py_pet__item"><a href="#"><img src="./image/cat.png">
+                        <p>Cat</p>
+                    </a></li>
+                <li data-aos="fade-up" class="py_pet__item"><a href="#"><img src="./image/dog.png">
+                        <p>Dog</p>
+                    </a></li>
+                <li data-aos="fade-up" class="py_pet__item"><a href="#"><img src="./image/rabbit.png">
+                        <p>Rabbit</p>
+                    </a></li>
+                <li data-aos="fade-up" class="py_pet__item"><a href="#"><img src="./image/goldfish.png">
+                        <p>Goldfish</p>
+                    </a></li>
+            </ul>
+        </div>
+
+        <!-- all_pet -->
+        <div class="all_pet">
+            <h2 data-aos="fade-up" class="text_header">Beloved by the boss</h2>
+            <p data-aos="fade-up" class="text_subtitle">Shop the latest high-end designer products for your pups at our
+                luxury dog boutique!</p>
+            <ul class="pet_product">
+                <li data-aos="zoom-in-up" class="product">
+                    <div class="product_img"><img class="product_img__image" src="./image/product_1.png"></div>
+                    <h3 class="product_name">Lucky 2</h3>
+                    <p class="product_note">Male non-sporting dog</p>
+                    <p class="product_price"><span class="new_price">$269</span></p>
+                    <div class="promotion"><span id="promotion">-10%</span></div>
+                    <button class="add_cart">Thêm vào giỏ hàng</button>
+                </li>
+                <li data-aos="zoom-in-up" class="product">
+                    <div class="product_img"><img class="product_img__image" src="./image/product_2.png"></div>
+                    <h3 class="product_name">Hạt Royal Canin Mini Puppy Cho Chó Con Giống Nhỏ</h3>
+                    <p class="product_note">Royal Canin/p>
+                    <p class="product_price"><span class="new_price">$109</span></p>
+                    <div class="promotion"><span id="promotion">-15%</span></div>
+                    <button class="add_cart">Thêm vào giỏ hàng</button>
+                </li>
+                <li data-aos="zoom-in-up" class="product">
+                    <div class="product_img"><img class="product_img__image" src="./image/product_3.png"></div>
+                    <h3 class="product_name">Hạt Ganador Adult Cho Chó Trưởng Thành Vị Cá Hồi & Gạo</h3>
+                    <p class="product_note">Ganador</p>
+                    <p class="product_price"><span class="new_price">$156</span></p>
+                    <div class="promotion"><span id="promotion">-8%</span></div>
+                    <button class="add_cart">Thêm vào giỏ hàng</button>
+                </li>
+                <li data-aos="zoom-in-up" class="product">
+                    <div class="product_img"><img class="product_img__image" src="./image/product_4.png"></div>
+                    <h3 class="product_name">Hạt Smartheart Puppy Vị Bò & Sữa Cho Chó Con</h3>
+                    <p class="product_note">Smartheart</p>
+                    <p class="product_price"><span class="new_price">$429</span></p>
+                    <div class="promotion"><span id="promotion">-35%</span></div>
+                    <button class="add_cart">Thêm vào giỏ hàng</button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- brand_nav -->
+        <div class="brand_nav">
+            <h2 data-aos="fade-up" class="text_header">Brand Boss Likes</h2>
+            <p data-aos="fade-up" class="text_subtitle">Shop the latest high-end designer products for your pups at our
+                luxury dog boutique!</p>
+            <div class="slider">
+                <div class="slider_item">
+                    <a href="#"><img src="./image/brand_1.png">
+                        <p class="brand_name">Nutrience</p>
+                    </a>
+                </div>
+                <div class="slider_item">
+                    <a href="#"><img src="./image/brand_2.png">
+                        <p class="brand_name">Royal Canin</p>
+                    </a>
+                </div>
+                <div class="slider_item">
+                    <a href="#"><img src="./image/brand_3.png">
+                        <p class="brand_name">Nexgard</p>
+                    </a>
+                </div>
+                <div class="slider_item">
+                    <a href="#"><img src="./image/brand_4.png">
+                        <p class="brand_name">Kit Cat</p>
+                    </a>
+                </div>
+                <div class="slider_item">
+                    <a href="#"><img src="./image/brand_5.png">
+                        <p class="brand_name">Tropiclean</p>
+                    </a>
+                </div>
+                <div class="slider_item">
+                    <a href="#"><img src="./image/brand_6.png">
+                        <p class="brand_name">Ciao Churu</p>
+                    </a>
+                </div>
+                <div class="slider_item">
+                    <a href="#"><img src="./image/brand_7.png">
+                        <p class="brand_name">Nekko</p>
+                    </a>
+                </div>
+                <div class="slider_item">
+                    <a href="#"><img src="./image/brand_8.png">
+                        <p class="brand_name">Monge</p>
+                    </a>
+                </div>
+
+                <button id="next"><ion-icon name="caret-forward-outline"></ion-icon></button>
+                <button id="prev"><ion-icon name="caret-back-outline"></ion-icon></button>
+            </div>
+        </div>
+
+        <!-- Discount -->
+        <div class="discount">
+            <img data-aos="fade-right" src="./image/discount_lg.png">
+            <div data-aos="fade-up" class="discount_text">
+                <h3>Discount up to 50% Only this month.</h3>
+                <a class="shop_now" href="#">Shop Now</a>
+            </div>
+            <div data-aos="fade-left" class="discount_list">
+                <div><img src="./image/discount_mx1.png"></div>
+                <div><img src="./image/discount_mx2.png"></div>
+            </div>
+        </div>
+
+        <!-- the_store -->
+        <ul class="the_store">
+            <h2 data-aos="fade-up" class="text_header">Buy Directly In The Store</h2>
+            <div class="the_storw__list">
+                <li data-aos="fade-right" class="the_store__item">
+                    <a href="#">
+                        <div><img src="./image/store_1.png"></div>
+                        <h2 class="store_name">PucciMart - Trường Sa</h2>
+                        <p class="store_adss">168 Trường Sa, Phường 1, Q. Bình Thạnh, Tp Hồ Chí Minh</p>
+                        <a href="#" class="store_link">Chỉ đường</a>
+                    </a>
+                </li>
+                <li data-aos="fade-left" class="the_store__item">
+                    <a href="#">
+                        <div><img src="./image/store_2.png"></div>
+                        <h2 class="store_name">PucciMart - Nơ Trang Long</h2>
+                        <p class="store_adss">412/3 Nơ Trang Long, P. 13, Q. Bình Thạnh, Tp Hồ Chí Minh</p>
+                        <a href="#" class="store_link">Chỉ đường</a>
+                    </a>
+                </li>
+            </div>
+        </ul>
+    </div>
+
+
+    <!-- start footer -->
+    <footer>
+        <div class="foo_top">
+            <div data-aos="fade-right" class="foo_top__box">
+                <img src="./image/foo_top_1.png">
+                <p>Free Same-Day Delivery</p>
+            </div>
+            <div data-aos="fade-up" class="foo_top__box">
+                <img src="./image/foo_top_2.png">
+                <p>100% Secure Checkout</p>
+            </div>
+            <div data-aos="fade-left" class="foo_top__box">
+                <img src="./image/foo_top_3.png">
+                <p>Easy 7 days replacement</p>
+            </div>
+        </div>
+
+        <ul class="foo_between">
+            <li data-aos="fade-up" class="foo_between__item">
+                <h3>about</h3>
+                <p><a href="#">Contact Us</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="#">Terms and Condition</a></p>
+            </li>
+            <li data-aos="fade-up" class="foo_between__item">
+                <h3>support</h3>
+                <p><a href="#">Shipping Info</a></p>
+                <p><a href="#">Track Order</a></p>
+                <p><a href="#">Help/FAQ</a></p>
+            </li>
+            <li data-aos="fade-up" class="foo_between__item">
+                <h3>contact us</h3>
+                <p>Call Us: +0123 456 789</p>
+                <p>Email Us: PucciMart@gmail.com</p>
+                <div><img src="./image/Google_Play.png"><img src="./image/Play_Store.png"></div>
+            </li>
+        </ul>
+
+        <div class="foo_below">
+            <p>All rights reserved@Puccimart</p>
+            <p>Terms and Condition</p>
+        </div>
+    </footer>
+
+
+    <!-- modal_cart -->
+    <div class="modal_cart">
+        <div class="cart_nav">
+            <i class="bi bi-x-circle-fill  close_modalCart"></i>
+            <h2 class="cart_header">Giỏ hàng</h2>
+            <h4 class="cart_sl">Giỏ hàng của bạn: <span id="cart_sl" class="cart_quantityS">0</span> sản phẩm!</h4>
+
+            <div class="cart_body">
+                <div class="cart_body__header">
+                    <div class="cart_body__headerBox">Sản phẩm</div>
+                    <div class="cart_body__headerBox">Đơn giá</div>
+                    <div class="cart_body__headerBox">Số lượng</div>
+                </div>
+                <div class="cart_body__content">
+                    <!-- danh sách sản phẩm -->
+                </div>
+            </div>
+
+            <div class="cart_foo">
+                <p><span style="font-weight: 500;color: var(--clo_cl);">PucciMart:</span> Giao hàng trên toàn quốc</p>
+                <div class="cart_foo__box">
+                    <h4>Tổng tiền: <span class="total_money"></span> </h4>
+                    <div>
+                        <a href="./page_cart" class="page_order">Đến trang giỏ hàng</a>
+                        <button type="submit" class="order_pro">Tiến hành đặt hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- draggable -->
+    <nav>
+        <div class="nav-content">
+            <div class="toggle-btn">
+                <i class="bi bi-plus-lg"></i>
+            </div>
+            <span style="--i:1;"><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></span>
+            <span style="--i:2;"><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></span>
+            <span style="--i:3;"><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></span>
+            <span style="--i:4;"><a href="#"><ion-icon name="logo-tiktok"></ion-icon></a></span>
+            <span style="--i:5;"><a href="#"><ion-icon name="logo-pinterest"></ion-icon></a></span>
+        </div>
+    </nav>
+
+
+    <!-- to-top -->
+    <button id="backTop" class="backTop">
+        <ion-icon name="caret-up-outline"></ion-icon>
+    </button>
+
+
+    <!-- js -->
+    <script src="./js/script.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // animation
+        AOS.init();
+        AOS.init({
+            duration: 1000
+        });
+    </script>
+
+</body>
+
+</html>
